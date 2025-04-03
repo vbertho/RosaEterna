@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosa Eterna</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="nomes">Sarah & Vinícius</h1>
+        <div class="mensagem">
+            <p>"A rosa cresce todo dia como nosso amor."</p>
+        </div>
+        <div class="flor">
+            <img id="imagemFlor" src="">
+        </div>
+        <div class="temporizador">
+            <p class="titulo-temporizador">Tempo de Namoro</p>
+            <div class="timers">
+                <div class="timer">
+                    <span class="num" id="anos">0</span>
+                    <span class="texttimer">Anos</span>
+                </div>
+                <div class="timer">
+                    <span class="num" id="meses">0</span>
+                    <span class="texttimer">Meses</span>
+                </div>
+                <div class="timer">
+                    <span class="num" id="dias">0</span>
+                    <span class="texttimer">Dias</span>
+                </div>
+                <div class="timer">
+                    <span class="num" id="horas">0</span>
+                    <span class="texttimer">Horas</span>
+                </div>
+            </div>
+        </div>        
+    </div>
+</body>
+    <script>
+    function atualizarTempo() {
+        let agora = new Date();
+        let inicioNamoro = new Date(2025, 2, 30);
+
+        let diferencaAnos = agora.getFullYear() - inicioNamoro.getFullYear();
+        let diferencaMeses = agora.getMonth() - inicioNamoro.getMonth();
+        let diferencaDias = agora.getDate() - inicioNamoro.getDate();
+        let diferencaHoras = agora.getHours() - inicioNamoro.getHours();
+
+        if (diferencaMeses < 0) {
+            diferencaAnos--;
+            diferencaMeses += 12;
+        }
+
+        if (diferencaDias < 0) {
+            diferencaMeses--;
+            let ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+            diferencaDias += ultimoMes;
+        }
+
+        if (diferencaHoras < 0) {
+            diferencaDias--;
+            diferencaHoras += 24;
+        }
+    
+        document.getElementById("anos").textContent = diferencaAnos;
+        document.getElementById("meses").textContent = diferencaMeses;
+        document.getElementById("dias").textContent = diferencaDias;
+        document.getElementById("horas").textContent = diferencaHoras;
+
+        atualizarFlor(diferencaAnos, diferencaMeses);
+    }
+
+    function atualizarFlor(diferencaAnos, diferencaMeses) {
+        let imagemFlor = document.getElementById("imagemFlor")
+
+        if (diferencaAnos > 4) {
+            imagemFlor.src = "imagens/flor4.gif";
+        } else if (diferencaAnos > 0) {
+            imagemFlor.src = "imagens/flor3.gif";
+        } else if (diferencaMeses > 0){
+            imagemFlor.src = "imagens/flor2.gif";
+        } else {
+            imagemFlor.src = "imagens/flor.gif";
+        }
+    }
+    setInterval(atualizarTempo, 60000);
+    atualizarTempo();
+    </script>
+</html>

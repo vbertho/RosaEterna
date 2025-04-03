@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: #111827;
+}
+
+h1 {
+    color: #f274b9;
+}
+
+.nomes {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container {
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.mensagem {
+    color: white;
+    font-size: 1.2rem;
+    background-color: #1F2937;
+    width: 80vw;
+    padding: 20px;
+    margin-top: 5%;
+    margin-right: 5%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+}
+
+.flor {
+    background-color: #1F2937;
+    width: 80vw;
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temporizador {
+    font-size: 120%;
+    color: #f274b9;
+    background-color: #1F2937;
+    width: 80vw;
+    padding: 20px;
+    margin-top: 4%;
+    text-align: center;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.titulo-temporizador {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.timers {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.timer {
+    font-size: 150%;
+    background-color: #374151;
+    width: 20%;
+    max-width: 120px;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+    padding: 10px;
+}
+
+
+.num {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+.texttimer {
+    font-size: 1rem;
+    color: white;
+    margin-top: 5px;
+}
